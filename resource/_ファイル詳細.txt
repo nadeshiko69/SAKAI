@@ -1,0 +1,19 @@
+
+Resourceフォルダ内のファイル一覧
+FastTextModelData.txt : TrainingData.csvで生成したファイルにラベルを付加し、カンマ区切りを半角スペース区切りに変更したもの
+sample.txt            : 歌ネットからスクレイピングした歌詞を分かち書きにしたもの。LyricGenerateでMarkovifyする用
+TestData.csv          : LyricGenerateで生成したフレーズ。これを評価して評価値が高いものを使って歌詞にしていく。
+TrainingData.csv      : 学習モデルを作るために作ったファイル。これを加工してFastTextModelData.txtを作成してtrainする。
+
+
+# Revision 01より追加
+sample_rev.txt        :歌詞生成の障害になりそうな単語を削除したもの
+                       削除した単語　: tu tu ,  wow , La La, ラララ , ... , (全角space) , ",『』, 「」,《 》, 連続する空白や!,?は1つにまとめる
+FastTextModelData_rev.txt : FastTaxtModelData.txtを改良したもの。
+　　　　　　　　　　　　　　もともと存在していた1000個の文章を全部__label__1に変更し、空行などを削除して800個に減らし、
+                            そこにまさよしの歌詞を__label__0として追加した(い)。
+
+
+##### Revision
+# 20/12/14 Revision 00 | 初期ver作成
+# 21/02/17 Revision 01 | sample_rev.txt, TastTextModelData_rev.txt作成
